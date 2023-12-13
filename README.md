@@ -1,2 +1,2 @@
 # Personal-Website
-Find m resume, portfolio, and contact information!
+Find my resume, portfolio, and contact information!
