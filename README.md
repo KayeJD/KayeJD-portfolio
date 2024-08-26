@@ -1,4 +1,4 @@
 # Personal-Website
 Find my resume, portfolio, and contact information!
 
-## Simply type in KayeJD.github.io in your browser and feel free to explore :) 
+## Click [KayeJD.github.io](https://kayejd.github.io/) and feel free to explore :) 
