@@ -96,6 +96,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #fcfcfc;
   background: #b7c2c2; }
 
+#check{
+  /* margin:2px auto; */
+  width: fit-content;
+  border-right: 1px solid;
+}
+
 #colorlib-page {
   position: relative;
   -webkit-transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
