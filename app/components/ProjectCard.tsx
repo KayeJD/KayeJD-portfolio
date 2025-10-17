@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router"; // only if using React Router
+import { Badge } from "@/app/components/ui/badge";
 
 interface ProjectCardProps {
   title: string;
@@ -6,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   status?: string;
+  link?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -13,45 +16,69 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   description,
   tags,
-  status = "In Progress...",
+  status,
+  link,
 }) => {
   return (
     <div className="w-full flex flex-col items-center py-8">
       <div className="w-full max-w-4xl rounded-xl overflow-hidden shadow-lg bg-neutral-100 dark:bg-neutral-800 transition-all">
         
         {/* Image Section */}
-        <div className="relative">
-          <a
+        {link ? (
+          <Link to={link}>
+            <div
+              className="block h-72 bg-cover bg-center opacity-90 hover:opacity-100 hover:scale-[1.02] transition-transform duration-300"
+              style={{ backgroundImage: `url(${image})` }}
+            >
+              <div className="flex items-center justify-center h-full bg-black/40">
+                <h2 className="text-4xl font-bold text-white tracking-wide">{title}</h2>
+              </div>
+            </div>
+          </Link>
+        ) : (
+          <div
             className="block h-72 bg-cover bg-center opacity-90 hover:opacity-100 hover:scale-[1.02] transition-transform duration-300"
             style={{ backgroundImage: `url(${image})` }}
           >
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+            <div className="flex items-center justify-center h-full bg-black/40">
               <h2 className="text-4xl font-bold text-white tracking-wide">{title}</h2>
             </div>
-          </a>
-        </div>
+          </div>
+        )}
 
-        {/* Tag Section */}
+        {/* Tags */}
         <div className="flex flex-wrap justify-center gap-2 mt-4">
           {tags.map((tag, idx) => (
-            <span
+            <Badge
               key={idx}
-              className="px-3 py-1 text-sm border border-gray-400 rounded-full text-gray-700 dark:text-gray-200"
+              variant="secondary"
+              className="text-gray-700 dark:text-gray-200"
             >
               {tag}
-            </span>
+            </Badge>
           ))}
         </div>
 
-        {/* Description Section */}
+        {/* Description */}
         <div className="text-center mt-6 px-6 pb-8">
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {description}
           </p>
 
-          <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400 italic">
-            {status}
-          </p>
+          {status ? (
+            <p className="mt-4 text-sm font-medium text-gray-500 dark:text-gray-400 italic">
+              {status}
+            </p>
+          ) : (
+            link && (
+              <Link
+                to={link}
+                className="mt-4 inline-block text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                View details
+              </Link>
+            )
+          )}
         </div>
       </div>
     </div>
