@@ -1,6 +1,4 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
-import { Badge } from "@/app/components/ui/badge";
+import { HeroSection } from "@/app/components/HeroSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import volexImg from "@/app/images/volexmain.jpg";
 import effortLoggerImg from "@/app/images/effortloggermain.jpg";
@@ -13,6 +11,8 @@ export function Welcome() {
   return (
     <main className="flex items-center justify-center min-h-screen">
       <div className="mb-8 flex flex-col items-center">
+        <HeroSection />
+
         <div className="mt-12 mb-8">
           <ProjectCard
             title="VOLEX"
