@@ -3,11 +3,11 @@ import { AboutSection } from "~/components/AboutSection";
 import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import volexImg from "@/app/images/volexmain.jpg";
-import effortLoggerImg from "@/app/images/effortloggermain.jpg";
-import creditCardImg from "@/app/images/creditcardmain.jpg";
-import spotifyImg from "@/app/images/spotifymain.jpg";
-import microImg from "@/app/images/micromain.jpg";
-import hvacImg from "@/app/images/hvacmain.jpg";
+import { effortloggerMain } from "~/images/effortlogger";
+import { creditCardMain } from "~/images/credit-card-ml";
+import { SpotifyMain } from "~/images/spotify-unlimited";
+import { MicroMain } from "~/images/microprocessor";
+import { HVACMain } from "~/images/hvac";
 
 export function Welcome() {
   return (
@@ -28,7 +28,7 @@ export function Welcome() {
 
           <ProjectCard
             title="EffortLogger 2.0"
-            image={effortLoggerImg}
+            image={effortloggerMain}
             description="A remake and improvement over the original EffortLogger Excel Visual Basic Program, written in Java for flexibility and using a localhost SQL database."
             tags={["Java / JavaFX", "SQL", "Authentication", "Documentation", "Agile / Scrum"]}
             link="/project-effortlogger"
@@ -36,7 +36,7 @@ export function Welcome() {
 
           <ProjectCard
             title="Fraud Detection Machine Learning"
-            image={creditCardImg}
+            image={creditCardMain}
             description="Analyzes a Kaggle dataset with 284,807 transactions to detect fraud using machine learning models such as Logistic Regression, Random Forest, and Gradient Boosting."
             tags={["Python", "Machine Learning", "Data Modeling", "Data Analysis"]}
             link="credit-card-ml-project"
@@ -44,15 +44,15 @@ export function Welcome() {
 
           <ProjectCard
             title="Spotify Web API"
-            image={spotifyImg}
+            image={SpotifyMain}
             description="Integrates Spotify’s API into a web app for authentication, top track access, and personalized music recommendations with interactive UI."
             tags={["JavaScript", "Pug / CSS", "API", "Express.js", "OAuth 2.0"]}
-            link="/project-spotifyapi"
+            link="https://github.com/KayeJD/Spotify-Unwrapped-Unlimited"
           />
 
           <ProjectCard
             title="Microprocessor"
-            image={microImg}
+            image={MicroMain}
             description="Engineered the digital logic for a brainless microprocessor programmable through ROM value manipulation."
             tags={["Verilog", "Digital Logic"]}
             link="/project-microprocessor"
@@ -60,7 +60,7 @@ export function Welcome() {
 
           <ProjectCard
             title="HVAC Design"
-            image={hvacImg}
+            image={HVACMain}
             description="Designed a controller to regulate temperature as part of a thermostat system, ensuring safe operation of HVAC equipment."
             tags={[
               "Engineering Design",
