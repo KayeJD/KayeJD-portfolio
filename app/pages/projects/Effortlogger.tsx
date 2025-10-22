@@ -1,65 +1,129 @@
 import React from "react";
 import { ProjectLayout } from "@/app/layouts/ProjectLayout";
 import {
-  creditCardMain,
-  creditCardBalancing,
-  creditCardDataAnalysis,
-  creditCardEnsemble,
-  creditCardLogisticRegression,
-  creditCardProcessing,
-  creditCardModelComparison,
-} from "@/app/images/credit-card-ml";
+    effortloggerDatabaseDesign,
+    effortloggerMain,
+    effortloggerLogin,
+    effortloggerLogs,
+    effortloggerEditor,
+} from "~/images/effortlogger";
 
-export default function CreditCardML() {
+export default function EffortLogger() {
   return (
     <ProjectLayout
-      title="Credit Card Fraud ML"
-      subtitle="Detecting fraudulent credit card transactions using various ML models on an imbalanced dataset."
-      overview="In this project, we explore a dataset from Kaggle consisting of 284,807 credit card transactions conducted over a two-day period in September 2013. The dataset is characterized by a significant class imbalance, with only 492 transactions identified as fraudulent (≈0.172% of total transactions)."
-      collaborator={{
-        name: "Tochi Obinma",
-        link: "https://www.linkedin.com/in/tochi-obinma-396703216/",
-      }}
+      title="EffortLogger 2.0"
+      subtitle="Modernizing Project Management with Efficiency and Privacy"
+      overview="EffortLogger 2.0 is a revitalized project management tool designed to address the evolving needs of a data-driven company. Recognizing limitations in the existing Excel-based system, our team crafted a solution that prioritizes both enhanced efficiency and employee privacy."
       highlights={{
-        languages: "Python",
-        tools: "pandas, scikit-learn, TensorFlow",
-        dataset: "Kaggle Credit Card Transactions (2013)",
+        languages: "Java, JavaFX, SQL",
+        tools: "SQL Database, JavaFX UI, Agile methodologies",
       }}
-      steps={[
+      mainImage={effortloggerMain}
+      sections={[
         {
-          description:
-            "Data Preprocessing: Cleaned and normalized features using RobustScaler, handled outliers, and split the dataset.",
-          image: creditCardProcessing,
+          heading: "Project Highlights",
+          content: (
+            <ul>
+              <li>
+                <b>Back-End Development:</b> SQL database, server-side scripting
+              </li>
+              <li>
+                <b>Software Engineering:</b> Agile methodologies, planning poker
+                integration
+              </li>
+              <li>
+                <b>Data Analysis:</b> Anonymization, reporting, analytics
+                dashboards
+              </li>
+              <li>
+                <b>Security:</b> Authentication, access control, audit trails
+              </li>
+            </ul>
+          ),
         },
         {
-          description:
-            "Exploratory Data Analysis: Analyzed class distribution and transaction patterns using pandas and matplotlib.",
-          image: creditCardDataAnalysis,
+          heading: "Overview",
+          content: (
+            <>
+              <p>
+                <b>Balancing Transparency and Privacy:</b> EffortLogger 2.0
+                anonymizes individual data for reporting, while still allowing
+                targeted improvement efforts under specific conditions. This
+                ensures transparency while maintaining confidentiality.
+              </p>
+              <img
+                src={effortloggerLogin}
+                alt="EffortLogger Login"
+                className="rounded-lg shadow my-6"
+              />
+              <p>
+                <b>Boosting Security and Efficiency:</b> The new system
+                implements robust authentication, access control, and a secure
+                SQL database. Streamlined workflows and intuitive UI design make
+                activity logging effortless.
+              </p>
+              <img
+                src={effortloggerEditor}
+                alt="EffortLogger Editor"
+                className="rounded-lg shadow my-6"
+              />
+              <p>
+                <b>Embracing Agile Practices:</b> EffortLogger 2.0 supports
+                large-scale data handling and agile workflows. Customizable
+                reports enable managers to analyze project progress and resource
+                allocation effectively.
+              </p>
+              <img
+                src={effortloggerLogs}
+                alt="EffortLogger Logs"
+                className="rounded-lg shadow my-6"
+              />
+            </>
+          ),
         },
         {
-          description:
-            "Model Building: Implemented Logistic Regression, RandomForest, GradientBoosting, and shallow neural networks.",
-          image: creditCardLogisticRegression,
+          heading: "Key Improvements",
+          content: (
+            <ul className="list-disc pl-6">
+              <li>
+                Privacy: Anonymization of individual data while allowing targeted
+                improvement efforts.
+              </li>
+              <li>
+                Security: Secure database, authentication, and access control.
+              </li>
+              <li>
+                Efficiency: Planning poker sessions, improved UI/UX, efficient
+                logging.
+              </li>
+              <li>
+                Agile Support: Large-scale data handling, SQL database,
+                customizable reports.
+              </li>
+            </ul>
+          ),
         },
         {
-          description:
-            "Class Balancing: Addressed severe class imbalance using undersampling and oversampling techniques such as SMOTE.",
-          image: creditCardBalancing,
-        },
-        {
-          description:
-            "Model Comparison: Evaluated accuracy, recall, precision, and ROC-AUC across models for balanced fraud detection.",
-          image: creditCardModelComparison,
-        },
-        {
-          description:
-            "Final Ensemble: Combined models to improve recall and reduce false negatives in fraud detection.",
-          image: creditCardEnsemble,
+          heading: "Additional Details",
+          content: (
+            <ul className="list-disc pl-6">
+              <li>
+                User stories provide specific examples of user needs and
+                acceptance criteria.
+              </li>
+              <li>
+                Operational requirements outline technical specifications for
+                developers.
+              </li>
+              <li>
+                Storyboards showcase the planning poker functionality step by
+                step.
+              </li>
+            </ul>
+          ),
         },
       ]}
-      summary="Various machine learning models were tested for fraud detection. Ensemble models and neural networks achieved strong accuracy and recall, with balanced handling of the imbalanced dataset."
-      repoLink="https://github.com/KayeJD/Credit-Card-Fraud-Detector"
-      mainImage={creditCardMain}
+      summary="EffortLogger 2.0 delivers secure, efficient, and privacy-conscious project management. Its agile-friendly design enhances transparency, improves workflows, and strengthens data-driven decision-making."
     />
   );
 }

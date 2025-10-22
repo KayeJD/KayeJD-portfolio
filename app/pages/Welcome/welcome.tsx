@@ -1,5 +1,4 @@
 import { HeroSection } from "@/app/components/HeroSection";
-import { AboutSection } from "~/components/AboutSection";
 import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import volexImg from "@/app/images/volexmain.jpg";
@@ -11,10 +10,9 @@ import { HVACMain } from "~/images/hvac";
 
 export function Welcome() {
   return (
-    <main className="flex items-center justify-center min-h-screen">
+    <main className="flex items-center justify-center min-h-screen mx-16">
       <div className="mb-8 flex flex-col items-center">
         <HeroSection />
-        <AboutSection />
         <SkillsSection />
 
         <div className="mt-12 mb-8">
@@ -31,7 +29,7 @@ export function Welcome() {
             image={effortloggerMain}
             description="A remake and improvement over the original EffortLogger Excel Visual Basic Program, written in Java for flexibility and using a localhost SQL database."
             tags={["Java / JavaFX", "SQL", "Authentication", "Documentation", "Agile / Scrum"]}
-            link="/project-effortlogger"
+            link="effortlogger-project"
           />
 
           <ProjectCard
@@ -55,7 +53,7 @@ export function Welcome() {
             image={MicroMain}
             description="Engineered the digital logic for a brainless microprocessor programmable through ROM value manipulation."
             tags={["Verilog", "Digital Logic"]}
-            link="/project-microprocessor"
+            link="https://github.com/KayeJD/Microprocessor/blob/main/README.md"
           />
 
           <ProjectCard
@@ -68,7 +66,7 @@ export function Welcome() {
               "Digital Signal Processing",
               "Project Management",
             ]}
-            link="/project-hvac"
+            link="https://github.com/KayeJD/HVAC-System/tree/main"
           />
         </div>
       </div>

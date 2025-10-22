@@ -1,8 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 
 interface ProjectStep {
+  title: string;
   description: string;
   image?: string;
+}
+
+interface ProjectSection {
+  heading?: string;
+  content: React.ReactNode;
 }
 
 interface ProjectLayoutProps {
@@ -22,6 +30,9 @@ interface ProjectLayoutProps {
   summary?: string;
   repoLink?: string;
   mainImage?: string;
+
+  /** 🆕 For EffortLogger-style long sections */
+  sections?: ProjectSection[];
 }
 
 export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
@@ -34,9 +45,11 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   summary,
   repoLink,
   mainImage,
+  sections,
 }) => {
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans min-h-screen">
+    <div className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
+      <div className="bg-gray-50 text-gray-800 font-sans min-h-screen"></div>
       {/* Header */}
       <header className="py-6 shadow-sm bg-white">
         <div className="container mx-auto px-6 flex items-center justify-between">
@@ -60,127 +73,184 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="text-center py-16 bg-gradient-to-b from-white to-gray-100">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">Portfolio</h2>
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-4">{title}</h1>
-        {subtitle && (
-          <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+      <div className="w-full max-w-5xl space-y-12">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="mt-3 text-lg text-gray-600 dark:text-gray-300">
+              {subtitle}
+            </p>
+          )}
+        </motion.div>
+
+        {/* Main Image */}
+        {mainImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center"
+          >
+            <img
+              src={mainImage}
+              alt={title}
+              className="rounded-xl shadow-lg max-h-[450px] w-full object-cover"
+            />
+          </motion.div>
         )}
-      </section>
 
-      {/* Main Image */}
-      {mainImage && (
-        <section className="container mx-auto px-6 py-10">
-          <div
-            className="rounded-2xl overflow-hidden shadow-lg"
-            style={{
-              backgroundImage: `url(${mainImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              height: "400px",
-            }}
-          ></div>
-        </section>
-      )}
+        {/* Overview Section */}
+        <section className="space-y-4 text-gray-700 dark:text-gray-300">
+          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            Overview
+          </h2>
+          <p className="leading-relaxed">{overview}</p>
 
-      {/* Content */}
-      <section className="container mx-auto px-6 py-8 max-w-4xl leading-relaxed">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Overview</h2>
-        <p className="mb-6">{overview}</p>
-
-        {collaborator && (
-          <>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              Collaborator:
-            </h3>
-            <p className="mb-6">
+          {collaborator && (
+            <p>
+              Collaborator:{" "}
               <a
                 href={collaborator.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
               >
                 {collaborator.name}
               </a>
             </p>
-          </>
-        )}
+          )}
+        </section>
 
+        {/* Highlights */}
         {highlights && (
-          <>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Project Highlights
-            </h3>
-            <ul className="list-disc list-inside space-y-2 mb-6">
-              {highlights.languages && (
-                <li>
-                  <strong>Languages:</strong> {highlights.languages}
-                </li>
-              )}
-              {highlights.tools && (
-                <li>
-                  <strong>Tools/Libraries:</strong> {highlights.tools}
-                </li>
-              )}
-              {highlights.dataset && (
-                <li>
-                  <strong>Dataset:</strong> {highlights.dataset}
-                </li>
-              )}
-            </ul>
-          </>
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            {highlights.languages && (
+              <div className="bg-white dark:bg-neutral-800 p-5 rounded-xl shadow-md text-center">
+                <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                  Languages
+                </h3>
+                <p>{highlights.languages}</p>
+              </div>
+            )}
+            {highlights.tools && (
+              <div className="bg-white dark:bg-neutral-800 p-5 rounded-xl shadow-md text-center">
+                <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                  Tools & Frameworks
+                </h3>
+                <p>{highlights.tools}</p>
+              </div>
+            )}
+            {highlights.dataset && (
+              <div className="bg-white dark:bg-neutral-800 p-5 rounded-xl shadow-md text-center">
+                <h3 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                  Dataset
+                </h3>
+                <p>{highlights.dataset}</p>
+              </div>
+            )}
+          </section>
         )}
 
+        {/* Steps */}
         {steps && steps.length > 0 && (
-          <>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Step-by-Step Overview
-            </h3>
-            <ol className="list-decimal list-inside space-y-6">
-              {steps.map((step, idx) => (
-                <li key={idx}>
-                  <p>{step.description}</p>
-                  {step.image && (
-                    <img
-                      src={step.image}
-                      alt=""
-                      className="rounded-xl my-4 shadow"
-                    />
-                  )}
-                </li>
-              ))}
-            </ol>
-          </>
+          <section className="space-y-10 mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              Implementation Steps
+            </h2>
+            {steps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-neutral-800 rounded-xl p-6 shadow-md"
+              >
+                {step.image && (
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full md:w-1/3 rounded-lg shadow"
+                  />
+                )}
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </section>
         )}
 
+        {/* 🆕 Custom Freeform Sections */}
+        {sections && sections.length > 0 && (
+          <section className="mt-10 space-y-10">
+            {sections.map((section, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-md"
+              >
+                {section.heading && (
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
+                    {section.heading}
+                  </h3>
+                )}
+                <div className="prose dark:prose-invert max-w-none">
+                  {section.content}
+                </div>
+              </motion.div>
+            ))}
+          </section>
+        )}
+
+        {/* Summary */}
         {summary && (
-          <>
-            <h3 className="text-xl font-semibold text-gray-800 mt-10 mb-3">
+          <section className="bg-blue-50 dark:bg-blue-950 p-6 rounded-xl shadow-md mt-12">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
               Summary
-            </h3>
-            <p className="mb-8">{summary}</p>
-          </>
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              {summary}
+            </p>
+          </section>
         )}
 
+        {/* Repo Link */}
         {repoLink && (
-          <div className="mt-10 text-center">
+          <div className="flex justify-center mt-10">
             <a
               href={repoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition"
+              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition"
             >
-              View on GitHub
+              <Github size={20} />
+              View Source on GitHub
             </a>
           </div>
         )}
-      </section>
 
-      {/* Footer */}
-      <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
-        <p>&copy; {new Date().getFullYear()} Karryl Dumalag. All rights reserved.</p>
-      </footer>
+        {/* Footer */}
+        <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
+          <p>&copy; {new Date().getFullYear()} Karryl Dumalag. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
   );
 };

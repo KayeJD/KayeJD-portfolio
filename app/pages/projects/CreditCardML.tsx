@@ -7,59 +7,124 @@ import {
   creditCardEnsemble,
   creditCardLogisticRegression,
   creditCardProcessing,
-  creditCardModelComparison,
+  creditCardNeuralNetwork
 } from "@/app/images/credit-card-ml";
 
 export default function CreditCardML() {
   return (
     <ProjectLayout
       title="Credit Card Fraud ML"
-      subtitle="Detecting fraudulent credit card transactions using various ML models on an imbalanced dataset."
-      overview="In this project, we explore a dataset from Kaggle consisting of 284,807 credit card transactions conducted over a two-day period in September 2013. The dataset is characterized by a significant class imbalance, with only 492 transactions identified as fraudulent (≈0.172% of total transactions)."
+      subtitle="Detecting fraudulent credit card transactions using machine learning on an imbalanced dataset"
+      overview="This project investigates fraudulent credit card transactions using a dataset of over 284,000 transactions collected over two days in September 2013. Only 0.172% of these transactions are fraudulent, posing a major challenge for traditional models due to the extreme class imbalance."
       collaborator={{
         name: "Tochi Obinma",
         link: "https://www.linkedin.com/in/tochi-obinma-396703216/",
       }}
       highlights={{
         languages: "Python",
-        tools: "pandas, scikit-learn, TensorFlow",
+        tools: "pandas, scikit-learn, TensorFlow, matplotlib, seaborn",
         dataset: "Kaggle Credit Card Transactions (2013)",
       }}
-      steps={[
+      sections={[
         {
-          description:
-            "Data Preprocessing: Cleaned and normalized features using RobustScaler, handled outliers, and split the dataset.",
-          image: creditCardProcessing,
+          heading: "Project Background",
+          content: (
+            <>
+              <p>
+                Credit card fraud detection requires models that can accurately
+                identify rare fraudulent transactions without overwhelming false
+                positives. This project focuses on designing a robust detection
+                pipeline capable of handling heavy class imbalance and optimizing
+                recall — the ability to catch actual fraud cases.
+              </p>
+              <img
+                src={creditCardProcessing}
+                alt="Data preprocessing visualization"
+                className="rounded-lg shadow-lg my-6"
+              />
+            </>
+          ),
         },
         {
-          description:
-            "Exploratory Data Analysis: Analyzed class distribution and transaction patterns using pandas and matplotlib.",
-          image: creditCardDataAnalysis,
+          heading: "Data Exploration & Preprocessing",
+          content: (
+            <>
+              <p>
+                The dataset consists of anonymized numerical features obtained
+                through PCA transformation. Preprocessing involved scaling the
+                features with <code>RobustScaler</code>, handling outliers, and
+                splitting the dataset into train/test partitions. We also
+                examined transaction patterns by hour and amount to understand
+                potential biases.
+              </p>
+              <img
+                src={creditCardDataAnalysis}
+                alt="Data analysis plot"
+                className="rounded-lg shadow-lg my-6"
+              />
+            </>
+          ),
         },
         {
-          description:
-            "Model Building: Implemented Logistic Regression, RandomForest, GradientBoosting, and shallow neural networks.",
-          image: creditCardLogisticRegression,
+          heading: "Model Development",
+          content: (
+            <>
+              <p>
+                Multiple models were trained and tested, including Logistic
+                Regression, Random Forest, Gradient Boosting, and a shallow
+                neural network. Each model was optimized for recall and ROC-AUC
+                metrics rather than overall accuracy.
+              </p>
+              <img
+                src={creditCardLogisticRegression}
+                alt="Model training"
+                className="rounded-lg shadow-lg my-6"
+              />
+            </>
+          ),
         },
         {
-          description:
-            "Class Balancing: Addressed severe class imbalance using undersampling and oversampling techniques such as SMOTE.",
-          image: creditCardBalancing,
+          heading: "Balancing the Dataset",
+          content: (
+            <>
+              <p>
+                Because fraudulent transactions represented less than 0.2% of the
+                data, class imbalance severely biased the models toward predicting
+                legitimate transactions. To correct this, we applied both
+                undersampling and oversampling methods, including SMOTE and
+                Tomek links, to achieve more balanced training sets.
+              </p>
+              <img
+                src={creditCardNeuralNetwork}
+                alt="Class balancing chart"
+                className="rounded-lg shadow-lg my-6"
+              />
+            </>
+          ),
         },
         {
-          description:
-            "Model Comparison: Evaluated accuracy, recall, precision, and ROC-AUC across models for balanced fraud detection.",
-          image: creditCardModelComparison,
-        },
-        {
-          description:
-            "Final Ensemble: Combined models to improve recall and reduce false negatives in fraud detection.",
-          image: creditCardEnsemble,
+          heading: "Model Evaluation & Ensemble",
+          content: (
+            <>
+              <p>
+                After balancing, we evaluated models based on recall, precision,
+                F1 score, and ROC-AUC. Ensemble models—combining Logistic
+                Regression, Random Forest, and Gradient Boosting—achieved
+                significant improvements in recall and reduced false negatives,
+                which are critical in fraud detection systems.
+              </p>
+              <img
+                src={creditCardEnsemble}
+                alt="Ensemble model visualization"
+                className="rounded-lg shadow-lg my-6"
+              />
+            </>
+          ),
         },
       ]}
-      summary="Various machine learning models were tested for fraud detection. Ensemble models and neural networks achieved strong accuracy and recall, with balanced handling of the imbalanced dataset."
+      summary="By leveraging a combination of classical and ensemble machine learning techniques, this project achieved high recall while maintaining balanced precision. The pipeline demonstrates the importance of proper data preprocessing and resampling strategies in fraud detection tasks."
       repoLink="https://github.com/KayeJD/Credit-Card-Fraud-Detector"
-      mainImage={creditCardMain}
+      mainImage={creditCardBalancing}
     />
   );
 }

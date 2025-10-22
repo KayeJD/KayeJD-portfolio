@@ -4,7 +4,7 @@ import creditCardDataAnalysis from "./creditcarddataanalysis.png";
 import creditCardEnsemble from "./creditcardensemble.png";
 import creditCardLogisticRegression from "./creditcardlogisticregression.png";
 import creditCardProcessing from "./creditcardprocessing.png";
-import creditCardModelComparison from "./creditcardmodelcomparison.png";
+import creditCardNeuralNetwork from "./creditcardneuralnet.png";
 
 export {
     creditCardMain,
@@ -13,5 +13,5 @@ export {
     creditCardEnsemble,
     creditCardLogisticRegression,
     creditCardProcessing,
-    creditCardModelComparison,
+    creditCardNeuralNetwork,
 };
