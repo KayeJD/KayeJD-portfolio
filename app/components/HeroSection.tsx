@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-center text-center min-h-screen px-6 bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-900 dark:to-neutral-950">
       <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-        Hi, I'm Karryl Dumalag
+        Karryl Dumalag
       </h1>
 
       <TypeAnimation

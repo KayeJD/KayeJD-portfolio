@@ -49,9 +49,9 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
-      <div className="bg-gray-50 text-gray-800 font-sans min-h-screen"></div>
+      
       {/* Header */}
-      <header className="py-6 shadow-sm bg-white">
+      <header className="py-6 shadow-sm bg-white mb-10 w-full">
         <div className="container mx-auto px-6 flex items-center justify-between">
           <a
             href="/"
