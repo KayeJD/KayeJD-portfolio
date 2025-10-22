@@ -39,7 +39,7 @@ export function Welcome() {
             image={creditCardImg}
             description="Analyzes a Kaggle dataset with 284,807 transactions to detect fraud using machine learning models such as Logistic Regression, Random Forest, and Gradient Boosting."
             tags={["Python", "Machine Learning", "Data Modeling", "Data Analysis"]}
-            link="/project-creditcardml"
+            link="credit-card-ml-project"
           />
 
           <ProjectCard
