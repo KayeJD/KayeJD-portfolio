@@ -22,7 +22,7 @@ export default function CreditCardML() {
       }}
       highlights={{
         languages: "Python",
-        tools: "pandas, scikit-learn, TensorFlow, matplotlib, seaborn",
+        tools: "pandas, scikit-learn, TensorFlow, matplotlib",
         dataset: "Kaggle Credit Card Transactions (2013)",
       }}
       sections={[

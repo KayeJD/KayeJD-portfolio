@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router"; // only if using React Router
 import { Badge } from "@/app/components/ui/badge";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   title: string;
@@ -20,14 +21,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <div className="w-full flex flex-col items-center py-8">
+    <motion.div 
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="w-full flex flex-col items-center py-8">
       <div className="w-full max-w-4xl rounded-xl overflow-hidden shadow-lg bg-neutral-100 dark:bg-neutral-800 transition-all">
         
         {/* Image Section */}
         {link ? (
           <Link to={link}>
             <div
-              className="block h-72 bg-cover bg-center opacity-90 hover:opacity-100 hover:scale-[1.02] transition-transform duration-300"
+              className="block h-120 bg-cover bg-center opacity-90 hover:opacity-100 hover:scale-[1.02] transition-transform duration-300"
               style={{ backgroundImage: `url(${image})` }}
             >
               <div className="flex items-center justify-center h-full bg-black/40">
@@ -81,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
+import { Header } from "@/app/components/Header";
 
 interface ProjectStep {
   title: string;
@@ -31,7 +32,6 @@ interface ProjectLayoutProps {
   repoLink?: string;
   mainImage?: string;
 
-  /** 🆕 For EffortLogger-style long sections */
   sections?: ProjectSection[];
 }
 
@@ -50,28 +50,7 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   return (
     <div className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
       
-      {/* Header */}
-      <header className="py-6 shadow-sm bg-white mb-10 w-full">
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <a
-            href="/"
-            className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition"
-          >
-            KD<span className="text-blue-600">.</span>
-          </a>
-          <nav className="hidden md:flex gap-6 text-gray-600 font-medium">
-            <a href="/#projects" className="hover:text-blue-600">
-              Projects
-            </a>
-            <a href="/#about" className="hover:text-blue-600">
-              About
-            </a>
-            <a href="/#contact" className="hover:text-blue-600">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <div className="w-full max-w-5xl space-y-12">
         {/* Hero Section */}
@@ -165,6 +144,7 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
               Implementation Steps
             </h2>
+
             {steps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -181,6 +161,7 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
                     className="w-full md:w-1/3 rounded-lg shadow"
                   />
                 )}
+
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
                     {step.title}
@@ -189,12 +170,12 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
                     {step.description}
                   </p>
                 </div>
+
               </motion.div>
             ))}
           </section>
         )}
 
-        {/* 🆕 Custom Freeform Sections */}
         {sections && sections.length > 0 && (
           <section className="mt-10 space-y-10">
             {sections.map((section, idx) => (

@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
 import { HeroSection } from "@/app/components/HeroSection";
 import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
+import { Header } from "@/app/components/Header"; 
 import volexImg from "@/app/images/volexmain.jpg";
 import { effortloggerMain } from "~/images/effortlogger";
 import { creditCardMain } from "~/images/credit-card-ml";
@@ -11,32 +13,25 @@ import { HVACMain } from "~/images/hvac";
 export function Welcome() {
   return (
     <main className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
+      <Header />
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HeroSection />
+      </motion.div>
 
-      {/* Header */}
-      <header className="py-6 shadow-sm bg-white mb-10 w-full">
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <a
-            href="/"
-            className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition"
-          >
-            KD<span className="text-blue-600">.</span>
-          </a>
-          <nav className="hidden md:flex gap-6 text-gray-600 font-medium">
-            <a href="/#projects" className="hover:text-blue-600">
-              Projects
-            </a>
-            <a href="/#about" className="hover:text-blue-600">
-              About
-            </a>
-            <a href="/#contact" className="hover:text-blue-600">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <HeroSection />
-      <SkillsSection />
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <SkillsSection />
+      </motion.div>
+      
 
       <div className="mt-12 mb-8">
         <ProjectCard
@@ -93,6 +88,7 @@ export function Welcome() {
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
 
+      
         {/* Footer */}
         <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
           <p>&copy; {new Date().getFullYear()} Karryl Dumalag. All rights reserved.</p>
