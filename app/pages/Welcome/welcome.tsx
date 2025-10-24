@@ -3,6 +3,8 @@ import { HeroSection } from "@/app/components/HeroSection";
 import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import { Header } from "@/app/components/Header"; 
+import { TimelineSection } from "@/app/components/TimelineSection";
+
 import volexImg from "@/app/images/volexmain.jpg";
 import { effortloggerMain } from "~/images/effortlogger";
 import { creditCardMain } from "~/images/credit-card-ml";
@@ -11,6 +13,37 @@ import { MicroMain } from "~/images/microprocessor";
 import { HVACMain } from "~/images/hvac";
 
 export function Welcome() {
+  const experienceData = [
+    {
+    label: "The origin",
+    date: "May, 2020",
+    title: "Acme was founded in Milan, Italy",
+    description:
+      "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
+    },
+    {
+      label: "The milestone",
+      date: "May, 2021",
+      title: "Reached 5K customers",
+      description:
+        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
+    },
+    {
+      label: "The acquisitions",
+      date: "May, 2022",
+      title: "Acquired various companies, including Technology Inc.",
+      description:
+        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
+    },
+    {
+      label: "The IPO",
+      date: "May, 2023",
+      title: "Acme went public at the New York Stock Exchange",
+      description:
+        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
+    },
+  ];
+
   return (
     <main className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
       <Header />
@@ -87,6 +120,8 @@ export function Welcome() {
           ]}
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
+
+        <TimelineSection items={experienceData} />
 
       
         {/* Footer */}
