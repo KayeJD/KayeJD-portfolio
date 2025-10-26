@@ -4,10 +4,11 @@ import Resume from "../files/Karryl_Dumalag_Resume.pdf";
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center text-center min-h-screen">
-      <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+    <section className="flex flex-col items-center justify-center  min-h-screen">
+      <h1 className="text-[80px] sm:text-[90px] font-bold text-gray-900 dark:text-white mb-4">
         Karryl Dumalag
       </h1>
+
 
       <TypeAnimation
         sequence={[

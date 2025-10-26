@@ -4,11 +4,10 @@ import { Moon, Sun } from "lucide-react";
 export function Header() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
-      if (localStorage.theme === "dark") return true;
       if (localStorage.theme === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return true; // default dark
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
@@ -33,9 +32,13 @@ export function Header() {
 
             <div className="flex items-center gap-6">
                 <nav className="hidden md:flex gap-6 text-gray-600 dark:text-gray-300 font-medium">
-                    <a href="/#projects" className="hover:text-blue-600 dark:hover:text-blue-400">
-                    Projects
-                    </a>
+                  <a href="/" className="hover:text-blue-600 dark:hover:text-blue-400">
+                  Experience
+                  </a>
+                  
+                  <a href="/#projects" className="hover:text-blue-600 dark:hover:text-blue-400">
+                  Projects
+                  </a>
                 </nav>
 
                 <button
