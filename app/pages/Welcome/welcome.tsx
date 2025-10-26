@@ -15,11 +15,37 @@ import { HVACMain } from "~/images/hvac";
 export function Welcome() {
   const experienceData = [
     {
-    label: "Software Engineer Intern",
-    date: "July 2025 - Present",
-    title: "Irenix Empowerment Foundation",
-    description:
-      "● Engineered backend infrastructure and testing environments for a HIPAA-compliant EHR system in Google Cloud, increasing uptime by 25% and supporting scalable data exchange across microservices. \n ● Refactored app data handling logic, cutting client-side latency by 30% and improving overall app performance.",
+      label: "Software Engineer Intern",
+      date: "July 2025",
+      title: "Irenix Empowerment Foundation",
+      description: [
+        "Engineered backend infrastructure and testing environments for a HIPAA-compliant EHR system in Google Cloud, increasing uptime by 25% and supporting scalable data exchange across microservices.", 
+        "Refactored app data handling logic, cutting client-side latency by 30% and improving overall app performance."
+      ],
+    },
+    {
+      label: "Software Engineer (Student Contract)",
+      date: "Aug 2024",
+      title: "General Dynamics Mission Systems",
+      description: [
+        "Accelerated automated test creation by ~20% by developing a cross-platform testing framework tailored for secure communications systems under strict DoD standards.","Increased test coverage by integrating OCR-driven validation modules, improving accuracy and reliability of encrypted communication verification.","Influenced project direction by presenting detailed test reports and strategic recommendations to stakeholders, strengthening alignment across engineering and program teams. "
+      ],
+    },
+    {
+      label: "Software Developer Intern",
+      date: "Mar 2024",
+      title: "28 Gorilla Engineering",
+      description: [
+        "Improved IoT testing efficiency regarding performance validation by 16% by developing a scalable multi-threaded backend system that reduced real-time data latency during machine evaluations.", "Designed a real-time data pipeline to ingest and process high-frequency BMS telemetry, enabling low-latency analysis and dynamic charting for large-scale battery performance monitoring.", "Boosted team productivity by documenting workflows and implementing organizational improvements that streamlined daily operations "
+      ],
+    },
+    {
+      label: "Enterprise Technical Support Specialist",
+      date: "Jan 2023",
+      title: "EAW",
+      description: [
+        "Resolved an average of 40+ enterprise-level technical issues per week for Microsoft Surface devices by providing Tier 2/3 remote troubleshooting, system diagnostics, and escalation support, reducing client downtime by 25%."
+      ],
     },
   ];
 
