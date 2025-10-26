@@ -49,7 +49,7 @@ export function HeroSection() {
       </div>
 
       <a
-        href="/files/Karryl_Dumalag_Resume.pdf"
+        href="~/files/Karryl_Dumalag_Resume.pdf"
         target="_blank"
         className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full font-medium hover:bg-blue-600 hover:text-white transition"
       >
