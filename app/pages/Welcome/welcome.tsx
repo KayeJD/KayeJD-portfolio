@@ -15,32 +15,11 @@ import { HVACMain } from "~/images/hvac";
 export function Welcome() {
   const experienceData = [
     {
-    label: "The origin",
-    date: "May, 2020",
-    title: "Acme was founded in Milan, Italy",
+    label: "Software Engineer Intern",
+    date: "July 2025 - Present",
+    title: "Irenix Empowerment Foundation",
     description:
-      "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
-    },
-    {
-      label: "The milestone",
-      date: "May, 2021",
-      title: "Reached 5K customers",
-      description:
-        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
-    },
-    {
-      label: "The acquisitions",
-      date: "May, 2022",
-      title: "Acquired various companies, including Technology Inc.",
-      description:
-        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
-    },
-    {
-      label: "The IPO",
-      date: "May, 2023",
-      title: "Acme went public at the New York Stock Exchange",
-      description:
-        "Pretium lectus quam id leo. Urna et pharetra pharetra massa massa. Adipiscing enim eu neque aliquam vestibulum morbi blandit cursus risus.",
+      "● Engineered backend infrastructure and testing environments for a HIPAA-compliant EHR system in Google Cloud, increasing uptime by 25% and supporting scalable data exchange across microservices. \n ● Refactored app data handling logic, cutting client-side latency by 30% and improving overall app performance.",
     },
   ];
 
@@ -56,17 +35,21 @@ export function Welcome() {
         <HeroSection />
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
         <SkillsSection />
-      </motion.div>
+      </motion.div> */}
       
 
       <div className="mt-12 mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          Side Projects
+        </h1>
+
         <ProjectCard
           title="VOLEX"
           image={volexImg}
@@ -120,6 +103,10 @@ export function Welcome() {
           ]}
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
+
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          My Experience
+        </h1>
 
         <TimelineSection items={experienceData} />
 
