@@ -4,7 +4,7 @@ import Resume from "../files/Karryl_Dumalag_Resume.pdf";
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center text-center min-h-screen px-6 bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-900 dark:to-neutral-950">
+    <section className="flex flex-col items-center justify-center text-center min-h-screen">
       <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
         Karryl Dumalag
       </h1>
@@ -26,10 +26,9 @@ export function HeroSection() {
         className="text-2xl mb-4 sm:text-3xl font-medium text-blue-600 dark:text-blue-400"
       />
 
-      <p className="text-lg mt-4 text-gray-600 dark:text-gray-300 max-w-2xl text-center mb-8">
-        This website is my playground — a showcase of my coding adventures, from
-        side projects that kept me up late to academic challenges that pushed my
-        limits. Grab a cup of coffee and take a look around!
+      <p className="text-lg mt-4 text-gray-600 dark:text-gray-300 max-w-2xl  mb-8">
+        <p>This website is my playground, a showcase of my coding adventures, from side projects that kept me up way past my bedtime to academic endeavors that challenged my brain in all the right ways.  </p>
+        <p>So, grab a cup of your favorite caffeinated beverage (I recommend double espresso for maximum code-fu) and take a look around! You might find something that sparks your curiosity, piques your interest, or even makes you laugh (hopefully not at my expense... ).</p>
       </p>
 
       <div className="flex space-x-6 mb-6">

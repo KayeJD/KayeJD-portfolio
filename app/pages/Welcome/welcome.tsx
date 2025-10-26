@@ -1,16 +1,36 @@
-import { motion } from "framer-motion";
+// Components
 import { HeroSection } from "@/app/components/HeroSection";
 import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import { Header } from "@/app/components/Header"; 
 import { TimelineSection } from "@/app/components/TimelineSection";
 
+// Images
 import volexImg from "@/app/images/volexmain.jpg";
 import { effortloggerMain } from "~/images/effortlogger";
 import { creditCardMain } from "~/images/credit-card-ml";
 import { SpotifyMain } from "~/images/spotify-unlimited";
 import { MicroMain } from "~/images/microprocessor";
 import { HVACMain } from "~/images/hvac";
+
+// ... the other stuff
+import { motion } from "framer-motion";
+import { useDarkMode } from "~/hooks/Themetoggle";
+
+export function ThemeToggle() {
+  const [isDark, setIsDark] = useDarkMode();
+
+  return (
+    <button
+      onClick={() => setIsDark(!isDark)}
+      className="p-2 rounded-md bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+    >
+      {isDark ? "🌙 Dark" : "☀️ Light"}
+    </button>
+  );
+}
+
+
 
 export function Welcome() {
   const experienceData = [
@@ -69,7 +89,14 @@ export function Welcome() {
       >
         <SkillsSection />
       </motion.div> */}
-      
+
+      <div className="mt-12 mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+          My Experience
+        </h1>
+        <TimelineSection items={experienceData} />
+      </div>
+    
 
       <div className="mt-12 mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
@@ -129,13 +156,6 @@ export function Welcome() {
           ]}
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
-
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-          My Experience
-        </h1>
-
-        <TimelineSection items={experienceData} />
-
       
         {/* Footer */}
         <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
