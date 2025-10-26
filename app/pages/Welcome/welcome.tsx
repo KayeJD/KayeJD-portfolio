@@ -91,7 +91,7 @@ export function Welcome() {
         <SkillsSection />
       </motion.div> */}
 
-      <div className="mt-12 mb-8">
+      <div id="experience" className="scroll-mt-32 mt-12 mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
           My Experience
         </h1>
@@ -99,7 +99,7 @@ export function Welcome() {
       </div>
     
 
-      <div className="mt-12 mb-8">
+      <div id="projects" className="scroll-mt-32 mt-12 mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
           Side Projects
         </h1>
@@ -157,6 +157,12 @@ export function Welcome() {
           ]}
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
+
+        <div id="extras" className="scroll-mt-32 mt-12 mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            Extras
+          </h1>
+        </div>
       
         <Footer/>
         
