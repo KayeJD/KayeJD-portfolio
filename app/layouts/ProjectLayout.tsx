@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import { Header } from "@/app/components/Header";
+import { Footer } from "@/app/components/Footer";
 
 interface ProjectStep {
   title: string;
@@ -52,7 +53,7 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
       
       <Header />
 
-      <div className="w-full max-w-5xl space-y-12">
+      <main className="pt-32 w-full max-w-5xl mx-auto space-y-12">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -214,24 +215,29 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
 
         {/* Repo Link */}
         {repoLink && (
-          <div className="flex justify-center mt-10">
-            <a
-              href={repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition"
-            >
-              <Github size={20} />
-              View Source on GitHub
-            </a>
+          <div className="max-w-4xl w-full mx-auto">
+            <div className="flex justify-end mt-10">
+              <a
+                href={repoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2
+                          border border-gray-900 dark:border-gray-100
+                          text-gray-900 dark:text-gray-100
+                          px-6 py-3 rounded-lg
+                          hover:bg-gray-900 hover:text-white
+                          dark:hover:bg-gray-100 dark:hover:text-gray-900
+                          transition-colors duration-200"
+              >
+                <Github size={20} />
+                View Source on GitHub
+              </a>
+            </div>
           </div>
         )}
 
-        {/* Footer */}
-        <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} Karryl Dumalag. All rights reserved.</p>
-        </footer>
-      </div>
+        <Footer/>
+      </main>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { SkillsSection } from "~/components/SkillsSection";
 import ProjectCard from "@/app/components/ProjectCard";
 import { Header } from "@/app/components/Header"; 
 import { TimelineSection } from "@/app/components/TimelineSection";
+import { Footer } from "~/components/Footer";
 
 // Images
 import volexImg from "@/app/images/volexmain.jpg";
@@ -157,10 +158,8 @@ export function Welcome() {
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
       
-        {/* Footer */}
-        <footer className="py-8 mt-16 bg-gray-100 text-center text-gray-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} Karryl Dumalag. All rights reserved.</p>
-        </footer>
+        <Footer/>
+        
       </div>
     </main>
 
