@@ -1,12 +1,17 @@
 {
   "name": "portfolio",
-  "private": true,
+  "homepage": "https://KayeJD.github.io/KayeJD-portfolio",
+  "version": "2.0.0",
+  "description": "Personal portfolio website of Kaye JD",
+  "private": false,
   "type": "module",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -15,6 +20,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
+    "gh-pages": "^6.3.0",
     "isbot": "^5.1.31",
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",

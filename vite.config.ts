@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
+      '@': path.resolve(__dirname, '.')
     },
   },
+  base : "/KayeJD-portfolio",
 });
