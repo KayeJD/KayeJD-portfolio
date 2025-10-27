@@ -35,40 +35,37 @@ export function ThemeToggle() {
 
 export function Welcome() {
   const experienceData = [
-    {
-      label: "Software Engineer Intern",
-      date: "July 2025",
-      title: "Irenix Empowerment Foundation",
-      description: [
-        "Engineered backend infrastructure and testing environments for a HIPAA-compliant EHR system in Google Cloud, increasing uptime by 25% and supporting scalable data exchange across microservices.", 
-        "Refactored app data handling logic, cutting client-side latency by 30% and improving overall app performance."
-      ],
-    },
-    {
-      label: "Software Engineer (Student Contract)",
-      date: "Aug 2024",
-      title: "General Dynamics Mission Systems",
-      description: [
-        "Accelerated automated test creation by ~20% by developing a cross-platform testing framework tailored for secure communications systems under strict DoD standards.","Increased test coverage by integrating OCR-driven validation modules, improving accuracy and reliability of encrypted communication verification.","Influenced project direction by presenting detailed test reports and strategic recommendations to stakeholders, strengthening alignment across engineering and program teams. "
-      ],
-    },
-    {
-      label: "Software Developer Intern",
-      date: "Mar 2024",
-      title: "28 Gorilla Engineering",
-      description: [
-        "Improved IoT testing efficiency regarding performance validation by 16% by developing a scalable multi-threaded backend system that reduced real-time data latency during machine evaluations.", "Designed a real-time data pipeline to ingest and process high-frequency BMS telemetry, enabling low-latency analysis and dynamic charting for large-scale battery performance monitoring.", "Boosted team productivity by documenting workflows and implementing organizational improvements that streamlined daily operations "
-      ],
-    },
-    {
-      label: "Enterprise Technical Support Specialist",
-      date: "Jan 2023",
-      title: "EAW",
-      description: [
-        "Resolved an average of 40+ enterprise-level technical issues per week for Microsoft Surface devices by providing Tier 2/3 remote troubleshooting, system diagnostics, and escalation support, reducing client downtime by 25%."
-      ],
-    },
-  ];
+  {
+    label: "Software Engineer Intern",
+    date: "Aug 2025",
+    title: "Irenix Empowerment Foundation",
+    description:
+      "At Irenix, I helped build and refine the backend for a healthcare system designed to securely manage patient data in the cloud. It was a deep dive into scalable systems, security, and how thoughtful engineering can make a real difference in healthcare tech.",
+  },
+  {
+    label: "Software Engineer (Student Contract)",
+    date: "Aug 2024",
+    title: "General Dynamics Mission Systems",
+    description:
+      "I worked on secure communications systems for defense environments, developing automated testing tools that supported reliability and performance. It was a great experience blending precision engineering with large-scale collaboration.",
+  },
+  {
+    label: "Software Developer Intern",
+    date: "Mar 2024",
+    title: "28 Gorilla Engineering",
+    description:
+      "At 28 Gorilla, I joined a small but sharp team working on IoT and a range of embedded projects like battery monitoring systems. I helped design tools to process real-time telemetry and learned a ton about backend systems, teamwork, and building for scale from the ground up.",
+  },
+  {
+    label: "Enterprise Technical Support Specialist",
+    date: "Jan 2023",
+    title: "EAW",
+    description:
+      "My early tech days were all about problem-solving, helping enterprise clients troubleshoot Microsoft Surface devices and network systems. It’s where I developed a knack for debugging and communicating complex issues clearly.",
+  },
+];
+
+
 
   return (
     <main className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
@@ -157,12 +154,12 @@ export function Welcome() {
           ]}
           link="https://github.com/KayeJD/HVAC-System/tree/main"
         />
-
+{/* TODO:
         <div id="extras" className="scroll-mt-32 mt-12 mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
             Extras
           </h1>
-        </div>
+        </div> */}
       
         <Footer/>
         
