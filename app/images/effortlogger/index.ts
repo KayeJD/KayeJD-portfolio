@@ -1,8 +1,8 @@
-import effortloggerDatabaseDesign from "./effortloggerdatabase.png";
-import effortloggerMain from "./effortloggermain.jpg";
-import effortloggerLogin from "./effortloggerlogin.png";
-import effortloggerLogs from "./effortloggerlogs.png";
-import effortloggerEditor from "./effortloggereditor.png";
+import effortloggerDatabaseDesign from "./db.png";
+import effortloggerMain from "./main.jpg";
+import effortloggerLogin from "./login.png";
+import effortloggerLogs from "./logs.png";
+import effortloggerEditor from "./editor.png";
 
 export {
     effortloggerDatabaseDesign,

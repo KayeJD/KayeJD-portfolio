@@ -11,5 +11,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.')
     },
   },
-  base : "/KayeJD-portfolio",
+  base : "/KayeJD-portfolio/",
 });

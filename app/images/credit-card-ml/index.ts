@@ -1,10 +1,10 @@
-import creditCardMain from "./creditcardmain.jpg";
-import creditCardBalancing from "./creditcardbalancing.png";
-import creditCardDataAnalysis from "./creditcarddataanalysis.png";
-import creditCardEnsemble from "./creditcardensemble.png";
-import creditCardLogisticRegression from "./creditcardlogisticregression.png";
-import creditCardProcessing from "./creditcardprocessing.png";
-import creditCardNeuralNetwork from "./creditcardneuralnet.png";
+import creditCardMain from "./main.jpg";
+import creditCardBalancing from "./balancing.png";
+import creditCardDataAnalysis from "./dataanalysis.png";
+import creditCardEnsemble from "./ensemble.png";
+import creditCardLogisticRegression from "./logreg.png";
+import creditCardProcessing from "./processing.png";
+import creditCardNeuralNetwork from "./neuralnet.png";
 
 export {
     creditCardMain,
