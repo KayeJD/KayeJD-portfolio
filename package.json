@@ -11,7 +11,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build git@github.com:KayeJD/KayeJD-portfolio.git"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
