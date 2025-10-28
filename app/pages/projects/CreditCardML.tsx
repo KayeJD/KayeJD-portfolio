@@ -15,7 +15,8 @@ export default function CreditCardML() {
     <ProjectLayout
       title="Credit Card Fraud ML"
       subtitle="Detecting fraudulent credit card transactions using machine learning on an imbalanced dataset"
-      overview="This project investigates fraudulent credit card transactions using a dataset of over 284,000 transactions collected over two days in September 2013. Only 0.172% of these transactions are fraudulent, posing a major challenge for traditional models due to the extreme class imbalance."
+      overview="In this project, we explore a dataset from Kaggle consisting of 284,807 credit card transactions conducted over a two-day period in September 2013. The dataset is characterized by a significant class imbalance, with only 492 transactions identified as fraudulent, representing approximately 0.172% of the total transactions. The primary objective is to apply machine learning techniques to address fraud detection in credit card transactions."
+
       collaborator={{
         name: "Tochi Obinma",
         link: "https://www.linkedin.com/in/tochi-obinma-396703216/",
@@ -37,6 +38,9 @@ export default function CreditCardML() {
                 pipeline capable of handling heavy class imbalance and optimizing
                 recall — the ability to catch actual fraud cases.
               </p>
+
+              <p>The project encompasses various steps, including loading and importing libraries, data preprocessing, analysis, and subsequent model building and evaluation. The primary model utilized is Logistic Regression, followed by the implementation of a shallow neural network, RandomForestClassifier, GradientBoostingClassifier, and LinearSVC. To address the class imbalance, a balanced dataset is created and used to train additional models. The project aims to compare the performance of different models in detecting fraudulent transactions and provide insights into the effectiveness of each approach.</p>
+
               <img
                 src={creditCardProcessing}
                 alt="Data preprocessing visualization"
