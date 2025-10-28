@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
-  "homepage": "https://KayeJD.github.io/KayeJD-portfolio",
+  "homepage": "https://KayeJD.github.io",
   "version": "2.0.0",
-  "description": "Personal portfolio website of Kaye JD",
+  "description": "Personal portfolio website of Karryl Dumalag",
   "private": false,
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build git@github.com:KayeJD/KayeJD-portfolio.git"
+    "deploy": "gh-pages -d build/client"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
