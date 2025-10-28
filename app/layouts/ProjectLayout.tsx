@@ -29,12 +29,12 @@ interface ProjectLayoutProps {
     dataset?: string;
   };
   steps?: ProjectStep[];
-  summary?: string;
+  summary?: string | string[]; 
   repoLink?: string;
   mainImage?: string;
-
   sections?: ProjectSection[];
 }
+
 
 export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   title,
@@ -202,16 +202,26 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
         )}
 
         {/* Summary */}
-        {summary && (
-          <section className="bg-blue-50 dark:bg-blue-950 p-6 rounded-xl shadow-md mt-12">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
-              Summary
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              {summary}
-            </p>
-          </section>
-        )}
+{summary && (
+  <section className="bg-blue-50 dark:bg-blue-950 p-6 rounded-xl shadow-md mt-12">
+    <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
+      Summary
+    </h2>
+
+    {Array.isArray(summary) ? (
+      <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
+        {summary.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+        {summary}
+      </p>
+    )}
+  </section>
+)}
+
 
         {/* Repo Link */}
         {repoLink && (

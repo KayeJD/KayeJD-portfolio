@@ -126,9 +126,14 @@ export default function CreditCardML() {
           ),
         },
       ]}
-      summary="By leveraging a combination of classical and ensemble machine learning techniques, this project achieved high recall while maintaining balanced precision. The pipeline demonstrates the importance of proper data preprocessing and resampling strategies in fraud detection tasks."
+      summary={
+        [
+        "The shallow neural network achieved a high accuracy of 100% on the validation set but showed lower precision, recall, and F1-score for detecting fraud, indicating potential overfitting. The Random Forest classifier demonstrated balanced performance with an accuracy of 100%, but a slightly lower F1-score for fraud detection compared to the neural network.",
+        "The Gradient Boosting classifier exhibited robust performance with high accuracy and reasonable precision, recall, and F1-score for fraud detection. The Linear SVM, both balanced and unbalanced, demonstrated similar results, achieving high accuracy and balanced performance in fraud detection.",
+        "In the oversampling scenario, where the dataset was balanced, logistic regression performed well, achieving high precision, recall, and F1-score for fraud detection. The shallow neural network trained on the balanced dataset showed improved performance compared to its counterpart trained on the imbalanced data."]
+      }
       repoLink="https://github.com/KayeJD/Credit-Card-Fraud-Detector"
-      mainImage={creditCardBalancing}
+      mainImage={creditCardMain}
     />
   );
 }
