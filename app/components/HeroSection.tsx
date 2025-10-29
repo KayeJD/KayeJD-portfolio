@@ -13,7 +13,7 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
           className="text-[70px] sm:text-[80px] font-bold text-gray-900 dark:text-white mb-4"
         >
-          Karryl Dumalag
+          Karryl Dumalag.
         </motion.h1>
 
         <motion.div
