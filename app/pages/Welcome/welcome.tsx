@@ -41,7 +41,7 @@ export function Welcome() {
       date: "Aug 2025",
       title: "Irenix Empowerment Foundation",
       description:
-        "At Irenix, I helped build and refine the backend for an EHR system designed ground up to securely manage patient data in the cloud. Working within a Google Cloud environment, I also contributed to integrating ML and AI models that supported predictive analytics and automated health insights. This experience was basically a deep dive into scalable systems, security, and how thoughtful engineering can make a real difference in healthcare tech.",
+        "At Irenix, I helped build and refine the backend for an EHR system designed ground up to securely manage patient data in the Google Cloud environment. I also contributed to integrating ML and AI models that supported predictive analytics and automated health insights. This experience was basically a deep dive into scalable systems, security, and healthcare tech.",
     },
     {
       label: "Software Engineer (Student Contract)",
@@ -69,7 +69,10 @@ export function Welcome() {
 
 
   return (
-    <main className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
+    <main className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen bg-grid">
+
+    
+
       <Header />
 
       <section className="relative w-full flex flex-col items-center justify-center py-32">
@@ -95,7 +98,7 @@ export function Welcome() {
       </motion.div> */}
 
       <section className="relative w-full flex flex-col items-center justify-center py-32">
-        <SectionBgText text="HISTORY" />
+        <SectionBgText text="EXPERIENCE" />
         <div id="experience" className="scroll-mt-32 mt-12 mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
             My Experience

@@ -49,7 +49,7 @@ export const ProjectLayout: React.FC<ProjectLayoutProps> = ({
   sections,
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen">
+    <div className="flex flex-col items-center justify-center px-6 py-16 bg-neutral-50 dark:bg-neutral-900 min-h-screen bg-grid">
       
       <Header />
 
