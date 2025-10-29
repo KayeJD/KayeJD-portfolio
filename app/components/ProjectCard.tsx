@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router"; // only if using React Router
+import { Link } from "react-router";
 import { Badge } from "@/app/components/ui/badge";
 import { motion } from "framer-motion";
 

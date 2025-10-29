@@ -38,28 +38,28 @@ export function Welcome() {
   const experienceData = [
     {
       label: "Software Engineer Intern",
-      date: "Aug 2025",
+      date: "Aug 2025 - Present",
       title: "Irenix Empowerment Foundation",
       description:
         "At Irenix, I helped build and refine the backend for an EHR system designed ground up to securely manage patient data in the Google Cloud environment. I also contributed to integrating ML and AI models that supported predictive analytics and automated health insights. This experience was basically a deep dive into scalable systems, security, and healthcare tech.",
     },
     {
       label: "Software Engineer (Student Contract)",
-      date: "Aug 2024",
+      date: "Aug 2024 - May 2025",
       title: "General Dynamics Mission Systems",
       description:
         "I worked on secure communications systems for defense environments, developing automated testing tools that supported reliability and performance. It was a great experience blending precision engineering with large-scale collaboration.",
     },
     {
       label: "Software Developer Intern",
-      date: "Mar 2024",
+      date: "Mar 2024 - Apr 2025",
       title: "28 Gorilla Engineering",
       description:
         "At 28 Gorilla, I joined a small but sharp team working on IoT and a range of embedded projects like battery monitoring systems. I helped design tools to process real-time telemetry and learned a ton about backend systems, teamwork, and building for scale from the ground up.",
     },
     {
       label: "Enterprise Technical Support Specialist",
-      date: "Jan 2023",
+      date: "Jan 2023 - Jul 2023",
       title: "EAW",
       description:
         "My early tech days were all about problem-solving, helping enterprise clients troubleshoot Microsoft Surface devices and network systems. It’s where I developed a knack for debugging and communicating complex issues clearly.",
