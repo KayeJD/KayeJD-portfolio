@@ -95,8 +95,7 @@ export default function CreditCardML() {
                 Because fraudulent transactions represented less than 0.2% of the
                 data, class imbalance severely biased the models toward predicting
                 legitimate transactions. To correct this, we applied both
-                undersampling and oversampling methods, including SMOTE and
-                Tomek links, to achieve more balanced training sets.
+                undersampling and oversampling methods.
               </p>
               <img
                 src={creditCardNeuralNetwork}
@@ -114,8 +113,7 @@ export default function CreditCardML() {
                 After balancing, we evaluated models based on recall, precision,
                 F1 score, and ROC-AUC. Ensemble models—combining Logistic
                 Regression, Random Forest, and Gradient Boosting—achieved
-                significant improvements in recall and reduced false negatives,
-                which are critical in fraud detection systems.
+                significant improvements in recall and reduced false negatives.
               </p>
               <img
                 src={creditCardEnsemble}
