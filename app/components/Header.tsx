@@ -47,9 +47,9 @@ export function Header() {
             <div className="flex items-center gap-6">
               <nav className="hidden md:flex gap-6 text-gray-600 dark:text-gray-300 font-medium">
                 {[
-                  { label: "Experience", id: "experience" },
-                  { label: "Projects", id: "projects" },
-                  { label: "Extras", id: "extras" },
+                  { label: "Experience.", id: "experience" },
+                  { label: "Projects.", id: "projects" },
+                  { label: "Extras.", id: "extras" },
                 ].map((item) => (
                   <button
                     key={item.id}
